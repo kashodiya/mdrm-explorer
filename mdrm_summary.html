@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDRM System Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        h1 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            margin-top: 30px;
+            border-bottom: 1px solid #bdc3c7;
+            padding-bottom: 5px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .section {
+            flex: 1;
+            min-width: 300px;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .code {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        .highlight {
+            background-color: #ffffcc;
+            padding: 2px;
+        }
+        .chart {
+            width: 100%;
+            height: 300px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Micro Data Reference Manual (MDRM) System Summary</h1>
+    
+    <div class="section">
+        <h2>Overview</h2>
+        <p>
+            The Micro Data Reference Manual (MDRM) is a catalog of micro and macro data collected from 
+            depository institutions and other respondents by the Federal Reserve System. The data are organized into reports, 
+            or data series, and consist primarily of financial and structure data.
+        </p>
+        <p>
+            The MDRM documents the labels and values associated with each data item and is designed to assist 
+            end users of the microdata.
+        </p>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Key Concepts</h2>
+            <h3>MDRM Identifier</h3>
+            <p>
+                An MDRM Identifier is an eight-character combination consisting of:
+            </p>
+            <ul>
+                <li><strong>Mnemonic</strong> (first 4 characters): Indicates the Reporting Form or overall name of the data collection</li>
+                <li><strong>Item Code</strong> (second 4 characters): Indicates what the specific item is</li>
+            </ul>
+            <p>
+                <strong>Example:</strong> <span class="code">SVGL2170</span> refers to total assets on the Thrift Financial Report of Condition.
+            </p>
+            
+            <h3>Cross-Series Consistency</h3>
+            <p>
+                The same data item always has the same Item Code across different series. For example, Total Assets 
+                is always assigned the number <span class="code">2170</span> across different series 
+                (<span class="code">RCON2170</span>, <span class="code">SVGL2170</span>, <span class="code">BHCK2170</span>).
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2>Item Types</h2>
+            <table>
+                <tr>
+                    <th>Code</th>
+                    <th>Description</th>
+                    <th>Percentage</th>
+                </tr>
+                <tr>
+                    <td>F</td>
+                    <td>Financial/reported: Item is submitted by the reporter</td>
+                    <td>86.71%</td>
+                </tr>
+                <tr>
+                    <td>D</td>
+                    <td>Derived: Item is derived from other stored variables</td>
+                    <td>10.13%</td>
+                </tr>
+                <tr>
+                    <td>P</td>
+                    <td>Percentage: Item is stored as a percentage value (e.g., 28% is stored as 28)</td>
+                    <td>1.12%</td>
+                </tr>
+                <tr>
+                    <td>R</td>
+                    <td>Rate: Item is stored as a decimal value (e.g., 28% is stored as .28)</td>
+                    <td>1.06%</td>
+                </tr>
+                <tr>
+                    <td>S</td>
+                    <td>Structure: Item describes an institution</td>
+                    <td>0.94%</td>
+                </tr>
+                <tr>
+                    <td>J</td>
+                    <td>Projected: Item is a projected value with an associated projection period</td>
+                    <td>0.04%</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Dataset Statistics</h2>
+            <ul>
+                <li><strong>Total records:</strong> 87,067</li>
+                <li><strong>Unique Mnemonics:</strong> 846</li>
+                <li><strong>Unique Item Codes:</strong> 47,079</li>
+                <li><strong>Unique Reporting Forms:</strong> 181</li>
+                <li><strong>Date range:</strong> 1913-12-23 to 2025-04-30</li>
+            </ul>
+            
+            <h3>Confidentiality Distribution</h3>
+            <ul>
+                <li><strong>Confidential (Y):</strong> 55.27%</li>
+                <li><strong>Public (N):</strong> 44.73%</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Top Mnemonics</h2>
+            <table>
+                <tr>
+                    <th>Mnemonic</th>
+                    <th>Count</th>
+                </tr>
+                <tr>
+                    <td>FXDM</td>
+                    <td>16,120</td>
+                </tr>
+                <tr>
+                    <td>RCON</td>
+                    <td>10,747</td>
+                </tr>
+                <tr>
+                    <td>DERV</td>
+                    <td>4,995</td>
+                </tr>
+                <tr>
+                    <td>RCFD</td>
+                    <td>4,378</td>
+                </tr>
+                <tr>
+                    <td>SVGL</td>
+                    <td>3,280</td>
+                </tr>
+                <tr>
+                    <td>CUSA</td>
+                    <td>3,246</td>
+                </tr>
+                <tr>
+                    <td>UBPR</td>
+                    <td>3,166</td>
+                </tr>
+                <tr>
+                    <td>BHCK</td>
+                    <td>2,631</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Top Reporting Forms</h2>
+            <table>
+                <tr>
+                    <th>Reporting Form</th>
+                    <th>Count</th>
+                </tr>
+                <tr>
+                    <td>FR 3036</td>
+                    <td>16,120</td>
+                </tr>
+                <tr>
+                    <td>FR 2436</td>
+                    <td>4,995</td>
+                </tr>
+                <tr>
+                    <td>FFIEC 031</td>
+                    <td>4,763</td>
+                </tr>
+                <tr>
+                    <td>FR Y-14A</td>
+                    <td>4,144</td>
+                </tr>
+                <tr>
+                    <td>OTS 1313</td>
+                    <td>3,796</td>
+                </tr>
+                <tr>
+                    <td>FR Y-9C</td>
+                    <td>3,753</td>
+                </tr>
+                <tr>
+                    <td>NCUA 5300/5300S</td>
+                    <td>3,476</td>
+                </tr>
+                <tr>
+                    <td>FFIEC 041</td>
+                    <td>3,399</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>Cross-Mnemonic Items</h2>
+            <p>These Item Codes appear across the most Mnemonics, indicating their importance across different reporting forms:</p>
+            <table>
+                <tr>
+                    <th>Item Code</th>
+                    <th>Item Name</th>
+                    <th>Mnemonics</th>
+                </tr>
+                <tr>
+                    <td>J035</td>
+                    <td>TOTAL -- RISK-BASED CAPITAL REPORTING</td>
+                    <td>162</td>
+                </tr>
+                <tr>
+                    <td>J034</td>
+                    <td>100 DEFAULT</td>
+                    <td>162</td>
+                </tr>
+                <tr>
+                    <td>2170</td>
+                    <td>TOTAL ASSETS</td>
+                    <td>117</td>
+                </tr>
+                <tr>
+                    <td>J014</td>
+                    <td>PROBABILITY OF DEFAULT (PCT) 0.50 TO < 0.75</td>
+                    <td>142</td>
+                </tr>
+                <tr>
+                    <td>J025</td>
+                    <td>PROBABILITY OF DEFAULT (PCT) 2.50 TO < 5.50</td>
+                    <td>142</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>MDRM Manual Structure</h2>
+        <p>The MDRM is broken into two main sections:</p>
+        
+        <h3>1. Reporting Forms and Mnemonics</h3>
+        <p>
+            This section includes links to the reporting forms and a brief description of each reporting series. 
+            It provides a link between the reporting forms' public name and the MDRM mnemonic.
+        </p>
+        <p>
+            <strong>URL:</strong> <a href="https://www.federalreserve.gov/apps/mdrm/series">https://www.federalreserve.gov/apps/mdrm/series</a>
+        </p>
+        
+        <h3>2. Data Dictionary</h3>
+        <p>
+            This is the most heavily used portion of the MDRM. The Data Dictionary defines each data item and shows 
+            all series on which the item appears. It also provides information regarding when the items were available 
+            and item descriptions.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Conclusion</h2>
+        <p>
+            The MDRM system provides a standardized way to identify and track financial data items across different 
+            reporting forms and institutions. It serves as a comprehensive reference for financial data reporting 
+            standards used by the Federal Reserve System.
+        </p>
+        <p>
+            The system's design allows for consistent tracking of financial metrics across different institutions 
+            and reporting forms, with the same item codes being used across different mnemonics to facilitate 
+            comparisons and analysis.
+        </p>
+    </div>
+</body>
+</html>
