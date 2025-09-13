@@ -36,6 +36,19 @@ The same data item always has the same Item Code across different series. For ex
 - **Confidential (Y):** 55.27%
 - **Public (N):** 44.73%
 
+## Data Visualizations
+
+Here are some key visualizations of the MDRM data:
+
+### Item Type Distribution
+![Item Type Distribution](item_type_distribution.png)
+
+### Mnemonic Distribution (Top 10)
+![Mnemonic Distribution](mnemonic_distribution.png)
+
+### Confidentiality Distribution
+![Confidentiality Distribution](confidentiality_distribution.png)
+
 ## Tools in this Repository
 
 ### 1. MDRM Explorer Web Application

@@ -7,7 +7,12 @@ MDRM_CSV.csv
 
 # Generated files
 mdrm_summary_report.txt
+
+# Include only specific PNG files
 *.png
+!item_type_distribution.png
+!mnemonic_distribution.png
+!confidentiality_distribution.png
 
 # Python cache files
 __pycache__/
